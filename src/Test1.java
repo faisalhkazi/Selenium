@@ -5,13 +5,24 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Test1 {
 	
-	WebDriver driver = null;
+	WebDriver driver = null;  // Global
 	
 	public void openChrome()
 	{
 		// ChromeDriver chrome = new ChromeDriver(); // (This is also correct)
 		driver = new ChromeDriver();
 		driver.get("https://timesofindia.indiatimes.com/poll.cms");
+		
+		/*
+		WebDriver.Options o = driver.manage();
+		WebDriver.Window w =  o.window();
+		w.maximize();
+		*/
+		
+		driver.manage().window().maximize();  //  This is the shortcut for upper command
+		
+		
+		
 	}
 	
 	public void openFirefox()
